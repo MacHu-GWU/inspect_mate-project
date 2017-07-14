@@ -6,6 +6,7 @@ get all either ``regular attribute``, ``property method``, ``regular method``,
 ``static method`` or ``class method``.
 """
 
+import inspect
 import functools
 try:
     from .tester import *

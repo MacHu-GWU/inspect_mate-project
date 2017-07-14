@@ -51,6 +51,88 @@ import:
         get_all_methods,
     )
 
+define a class:
+
+.. code-block:: python
+
+    class Base(object):
+        attribute = "attribute"
+
+        def __init__(self):
+            self.initiated_attribute = "initiated_attribute"
+
+        @property
+        def property_method(self):
+            return "property_method"
+
+        def regular_method(self):
+            return "regular_method"
+
+        @staticmethod
+        def static_method():
+            return "static_method"
+
+        @classmethod
+        def class_method(cls):
+            return "class_method"
+
+
+    class Klass(Base):
+        pass
+
+
+    instance = Klass()
+
+usage:
+
+.. code-block:: python
+
+    # tester_function(klass_or_instance, "attribute_name")
+    >>> is_attribute(Klass, "attribute")
+    True
+    >>> is_property_method(Klass, "property_attribute")
+    True
+    >>> is_regular_method(Klass, "regular_method")
+    True
+    >>> is_static_method(Klass, "static_method")
+    True
+    >>> is_class_method(Klass, "class_method")
+    True
+
+    >>> is_attribute(instance, "attribute")
+    True
+    >>> is_attribute(instance, "initiated_attribute")
+    True
+    >>> is_property_method(instance, "property_attribute")
+    True
+    >>> is_regular_method(instance, "regular_method")
+    True
+    >>> is_static_method(instance, "static_method")
+    True
+    >>> is_class_method(instance, "class_method")
+    True
+
+    # getter_function(klass_or_instance), yield (attr, value)
+    >>> get_attributes(Klass)
+    [("attribute", "attribute")]
+
+    >>> get_property_methods(Klass)
+    [("property_attribute", "property_attribute")]
+
+    >>> get_regular_methods(Klass)
+    [("regular_method", Klass.regular_method)]
+
+    >>> get_static_methods(Klass)
+    [("static_method", "Klass.static_method")]
+
+    >>> get_class_methods(Klass)
+    [("class_method", "Klass.class_method")]
+
+    >>> get_all_attributes(Klass)
+    [("attribute", "attribute"), ("property_attribute", "property_attribute")]
+
+    >>> get_all_methods(Klass)
+    [("regular_method", Klass.regular_method), ("static_method", "Klass.static_method"), ("class_method", "Klass.class_method")]
 
 
 .. _install:
