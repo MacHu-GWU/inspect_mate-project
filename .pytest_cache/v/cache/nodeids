@@ -1,0 +1,5 @@
+[
+  "tests/test_getter.py::test",
+  "tests/test_import.py::test",
+  "tests/test_tester.py::test"
+]

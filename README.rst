@@ -1,14 +1,24 @@
 .. image:: https://travis-ci.org/MacHu-GWU/inspect_mate-project.svg?branch=master
+    :target: https://travis-ci.org/MacHu-GWU/inspect_mate-project?branch=master
+
+.. image:: https://codecov.io/gh/MacHu-GWU/inspect_mate-project/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/MacHu-GWU/inspect_mate-project
 
 .. image:: https://img.shields.io/pypi/v/inspect_mate.svg
+    :target: https://pypi.python.org/pypi/inspect_mate
 
 .. image:: https://img.shields.io/pypi/l/inspect_mate.svg
+    :target: https://pypi.python.org/pypi/inspect_mate
 
 .. image:: https://img.shields.io/pypi/pyversions/inspect_mate.svg
+    :target: https://pypi.python.org/pypi/inspect_mate
+
+.. image:: https://img.shields.io/badge/Star_Me_on_GitHub!--None.svg?style=social
+    :target: https://github.com/MacHu-GWU/inspect_mate-project
 
 
-Welcome to inspect_mate Documentation
-=====================================
+Welcome to ``inspect_mate`` Documentation
+==============================================================================
 inspect_mate can easily separate:
 
 1. ``regular attribute``.
@@ -20,18 +30,29 @@ inspect_mate can easily separate:
 7. **all methods**, include regular method, ``static method`` and ``class method``.
 
 
-**Quick Links**
----------------
-- `GitHub Homepage <https://github.com/MacHu-GWU/inspect_mate-project>`_
-- `Online Documentation <https://pypi.python.org/pypi/inspect_mate>`_
-- `PyPI download <https://pypi.python.org/pypi/inspect_mate>`_
-- `Install <install_>`_
-- `Issue submit and feature request <https://github.com/MacHu-GWU/inspect_mate-project/issues>`_
-- `API reference and source code <http://pythonhosted.org/inspect_mate/py-modindex.html>`_
+Quick Links
+------------------------------------------------------------------------------
+- .. image:: https://img.shields.io/badge/Link-Document-red.svg
+      :target: https://inspect_mate.readthedocs.io/index.html
+
+- .. image:: https://img.shields.io/badge/Link-API_Reference_and_Source_Code-red.svg
+      :target: https://inspect_mate.readthedocs.io/py-modindex.html
+
+- .. image:: https://img.shields.io/badge/Link-Install-red.svg
+      :target: `install`_
+
+- .. image:: https://img.shields.io/badge/Link-GitHub-blue.svg
+      :target: https://github.com/MacHu-GWU/inspect_mate-project
+
+- .. image:: https://img.shields.io/badge/Link-Submit_Issue_and_Feature_Request-blue.svg
+      :target: https://github.com/MacHu-GWU/inspect_mate-project/issues
+
+- .. image:: https://img.shields.io/badge/Link-Download-blue.svg
+      :target: https://pypi.python.org/pypi/inspect_mate#downloads
 
 
 **Example**
------------
+------------------------------------------------------------------------------
 import:
 
 .. code-block:: python
@@ -82,6 +103,7 @@ define a class:
 
 
     instance = Klass()
+
 
 usage:
 
@@ -138,16 +160,17 @@ usage:
 .. _install:
 
 Install
--------
+------------------------------------------------------------------------------
+
 
 ``inspect_mate`` is released on PyPI, so all you need is:
 
 .. code-block:: console
 
-	$ pip install inspect_mate
+    $ pip install inspect_mate
 
 To upgrade to latest version:
 
 .. code-block:: console
 
-	$ pip install --upgrade inspect_mate
+    $ pip install --upgrade inspect_mate

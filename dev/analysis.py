@@ -6,6 +6,7 @@ import inspect
 import pandas as pd
 from pathlib_mate import Path
 
+
 class Base(object):
     attribute = "attribute"
 
@@ -43,17 +44,17 @@ def export_true_table():
         ("isinstance.staticmethod", lambda v: isinstance(v, staticmethod)),
         ("isinstance.classmethod", lambda v: isinstance(v, classmethod)),
     ]
-    
+
     class_attr_value_paris = [
         ("attribute", MyClass.attribute),
         ("property_method", MyClass.property_method),
         ("regular_method", MyClass.regular_method),
-        ("static_method", MyClass.static_method),        
+        ("static_method", MyClass.static_method),
         ("class_method", MyClass.class_method),
         ("__dict__['static_method']", Base.__dict__["static_method"]),
         ("__dict__['class_method']", Base.__dict__["class_method"]),
     ]
-    
+
     myclass = MyClass()
     instance_attr_value_paris = [
         ("attribute", myclass.attribute),
@@ -61,14 +62,14 @@ def export_true_table():
         ("regular_method", myclass.regular_method),
         ("static_method", myclass.static_method),
         ("class_method", MyClass.class_method),
-#         ("__dict__['static_method']", myclass.__dict__["static_method"]),
-#         ("__dict__['class_method']", myclass.__dict__["class_method"]),
+        #         ("__dict__['static_method']", myclass.__dict__["static_method"]),
+        #         ("__dict__['class_method']", myclass.__dict__["class_method"]),
     ]
-    
+
     print(inspect.getargspec(MyClass.regular_method))
     print(inspect.getargspec(MyClass.static_method))
     print(inspect.getargspec(MyClass.class_method))
-    
+
     print(inspect.getargspec(myclass.regular_method))
     print(inspect.getargspec(myclass.static_method))
     print(inspect.getargspec(myclass.class_method))
@@ -92,12 +93,13 @@ def export_true_table():
         return df
 
     version = "%s.%s" % (sys.version_info.major, sys.version_info.minor)
-    
+
     df = create_true_table_dataframe(tester_list, class_attr_value_paris)
     df.to_csv("%s_class.csv" % version, index=True)
-    
+
     df = create_true_table_dataframe(tester_list, instance_attr_value_paris)
-    df.to_csv("%s_instance.csv" % version, index=True)    
+    df.to_csv("%s_instance.csv" % version, index=True)
+
 
 export_true_table()
 

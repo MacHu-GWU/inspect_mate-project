@@ -6,16 +6,18 @@ test it's either ``regular attribute``, ``property method``, ``regular method``,
 ``static method`` or ``class method``. 
 """
 
+import sys
 import inspect
 
+PY2 = sys.version_info[0] == 2
+PY3 = sys.version_info[0] == 3
 
-__all__ = [
-    "is_attribute",
-    "is_property_method",
-    "is_regular_method",
-    "is_static_method",
-    "is_class_method",
-]
+if PY2:
+    getfullargspec = inspect.getargspec
+elif PY3:
+    getfullargspec = inspect.getfullargspec
+else:  # pragma: no cover
+    raise ValueError
 
 
 def is_attribute(klass_or_instance, attr):
@@ -102,7 +104,7 @@ def is_regular_method(klass_or_instance, attr):
         if isinstance(value, property):
             return False
 
-        args = inspect.getargspec(value).args
+        args = getfullargspec(value).args
         try:
             if args[0] == "self":
                 return True
@@ -133,7 +135,7 @@ def is_static_method(klass_or_instance, attr):
         if isinstance(value, property):
             return False
 
-        args = inspect.getargspec(value).args
+        args = getfullargspec(value).args
         # Can't be a regular method, must be a static method
         if len(args) == 0:
             return True
@@ -169,7 +171,7 @@ def is_class_method(klass_or_instance, attr):
         if isinstance(value, property):
             return False
 
-        args = inspect.getargspec(value).args
+        args = getfullargspec(value).args
         # Can't be a regular method, must be a static method
         if len(args) == 0:
             return inspect.ismethod(value)
@@ -183,6 +185,14 @@ def is_class_method(klass_or_instance, attr):
 
     return False
 
+
+__all__ = [
+    "is_attribute",
+    "is_property_method",
+    "is_regular_method",
+    "is_static_method",
+    "is_class_method",
+]
 
 if __name__ == "__main__":
     from inspect_mate.tests import Klass, instance
