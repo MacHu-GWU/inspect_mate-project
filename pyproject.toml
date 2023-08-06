@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "inspect-mate++"
+name = "inspect-mate-pp"
 version = "0.0.3"
 description = ""
 authors = ["Jacob Valdez <jacobfv123@gmail.com>"]
