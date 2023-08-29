@@ -16,6 +16,7 @@
 .. image:: https://img.shields.io/badge/Star_Me_on_GitHub!--None.svg?style=social
     :target: https://github.com/MacHu-GWU/inspect_mate-project
 
+*Forked from https://github.com/MacHu-GWU/inspect_mate-project to keep up to date with Python versions*
 
 Welcome to ``inspect_mate`` Documentation
 ==============================================================================

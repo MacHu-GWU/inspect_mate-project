@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "inspect-mate-pp"
+version = "0.0.4"
+description = ""
+authors = ["Jacob Valdez <jacobfv123@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "inspect_mate_pp" }]
+
+[tool.poetry.dependencies]
+python = ">=3.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
